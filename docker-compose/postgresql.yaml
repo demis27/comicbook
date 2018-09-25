@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  postrgesql:
+    image: postgres:9.4
+    volumes:
+      - ./postgresql/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    environment:
+      - POSTGRES_DB=comics
+      - POSTGRES_USER=comics
+      - POSTGRES_PASSWORD=comics
+    ports:
+      - 5432:5432
