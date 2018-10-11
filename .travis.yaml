@@ -1,6 +1,8 @@
 language: java
 
-script: cd comics-backend; mvn clean test 
+script: 
+  - cd comics-backend
+  - mvn clean test 
 
 jdk: oraclejdk8
 
