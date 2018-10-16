@@ -1,0 +1,5 @@
+org/demis27/comics/business/converter/GenericConverter.class
+org/demis27/comics/business/dto/ComicBookDTO.class
+org/demis27/comics/business/ComicBookBusinessService.class
+org/demis27/comics/business/converter/ComicBookConverter.class
+org/demis27/comics/business/dto/DTO.class

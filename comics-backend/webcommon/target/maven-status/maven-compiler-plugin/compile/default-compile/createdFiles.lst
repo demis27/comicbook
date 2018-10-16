@@ -1,0 +1,4 @@
+org/demis27/comics/web/RestConfiguration.class
+org/demis27/comics/web/ControllerHelper.class
+org/demis27/comics/web/RestError.class
+org/demis27/comics/web/HandlerException400Resolver.class

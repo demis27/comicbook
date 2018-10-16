@@ -1,0 +1,8 @@
+/home/skermabon/IdeaProjects/demis27/comicbook/comics-backend/paging/src/main/java/org/demis27/comics/paging/Range.java
+/home/skermabon/IdeaProjects/demis27/comicbook/comics-backend/paging/src/main/java/org/demis27/comics/paging/SortParameterParser.java
+/home/skermabon/IdeaProjects/demis27/comicbook/comics-backend/paging/src/main/java/org/demis27/comics/paging/SortParameterElement.java
+/home/skermabon/IdeaProjects/demis27/comicbook/comics-backend/paging/src/main/java/org/demis27/comics/paging/RangeConverter.java
+/home/skermabon/IdeaProjects/demis27/comicbook/comics-backend/paging/src/main/java/org/demis27/comics/paging/SortParameterElementConverter.java
+/home/skermabon/IdeaProjects/demis27/comicbook/comics-backend/paging/src/main/java/org/demis27/comics/paging/Sort.java
+/home/skermabon/IdeaProjects/demis27/comicbook/comics-backend/paging/src/main/java/org/demis27/comics/paging/RequestedRangeUnsatisfiableException.java
+/home/skermabon/IdeaProjects/demis27/comicbook/comics-backend/paging/src/main/java/org/demis27/comics/paging/RangeException.java

@@ -1,0 +1,6 @@
+/home/skermabon/IdeaProjects/demis27/comicbook/comics-backend/core-data/src/main/java/org/demis27/comics/data/jpa/repository/ComicBookRepository.java
+/home/skermabon/IdeaProjects/demis27/comicbook/comics-backend/core-data/src/main/java/org/demis27/comics/data/jpa/service/ComicBookDataService.java
+/home/skermabon/IdeaProjects/demis27/comicbook/comics-backend/core-data/src/main/java/org/demis27/comics/data/jpa/entity/AbstractEntity.java
+/home/skermabon/IdeaProjects/demis27/comicbook/comics-backend/core-data/src/main/java/org/demis27/comics/data/jpa/entity/ComicBook.java
+/home/skermabon/IdeaProjects/demis27/comicbook/comics-backend/core-data/src/main/java/org/demis27/comics/data/jpa/PersistenceJPAConfiguration.java
+/home/skermabon/IdeaProjects/demis27/comicbook/comics-backend/core-data/src/main/java/org/demis27/comics/data/jpa/entity/EntityInterface.java
