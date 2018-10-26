@@ -16,6 +16,8 @@ public class ComicBook extends AbstractEntity implements EntityInterface {
 
     private String title;
 
+    private String isbn;
+
     @Id
     @Column(name = "comic_book_id", precision = 10)
     @GeneratedValue(generator = "uuid")
@@ -37,5 +39,14 @@ public class ComicBook extends AbstractEntity implements EntityInterface {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    @Column(name = "isbn", nullable = true, unique = false, length = 13)
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 }
