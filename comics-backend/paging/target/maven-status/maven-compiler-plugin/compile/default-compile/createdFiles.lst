@@ -1,8 +1,0 @@
-org/demis27/comics/paging/sort/Sort.class
-org/demis27/comics/paging/sort/SortParameterElementConverter.class
-org/demis27/comics/paging/range/RequestedRangeUnsatisfiableException.class
-org/demis27/comics/paging/range/RangeException.class
-org/demis27/comics/paging/sort/SortParameterParser.class
-org/demis27/comics/paging/range/RangeConverter.class
-org/demis27/comics/paging/range/Range.class
-org/demis27/comics/paging/sort/SortParameterElement.class

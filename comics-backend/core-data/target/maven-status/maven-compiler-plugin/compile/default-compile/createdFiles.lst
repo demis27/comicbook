@@ -1,6 +1,0 @@
-org/demis27/comics/data/jpa/repository/ComicBookRepository.class
-org/demis27/comics/data/jpa/entity/AbstractEntity.class
-org/demis27/comics/data/jpa/PersistenceJPAConfiguration.class
-org/demis27/comics/data/jpa/service/ComicBookDataService.class
-org/demis27/comics/data/jpa/entity/EntityInterface.class
-org/demis27/comics/data/jpa/entity/ComicBook.class
