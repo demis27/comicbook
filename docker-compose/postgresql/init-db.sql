@@ -1,5 +1,5 @@
 create table comic_book (
-	 comic_book_id 					varchar(64)
+	 comic_book_id 					varchar(37)
 	,title							varchar(256)
 	,creation_date               	timestamp without time zone default current_date not null
 	,modification_date 				timestamp without time zone default current_date not null	
@@ -7,7 +7,7 @@ create table comic_book (
 );
 
 create table person (
-	 id 							varchar(32)
+	 id 							varchar(37)
 	,firstname						varchar(32)
 	,lastname						varchar(32)
 	,middlename						varchar(32)

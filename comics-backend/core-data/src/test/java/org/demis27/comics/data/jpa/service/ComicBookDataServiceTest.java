@@ -31,5 +31,11 @@ public class ComicBookDataServiceTest extends AbstractTestNGSpringContextTests {
 
         ComicBook result = comicBookEntities.get(0);
         Assert.assertEquals(result.getTitle(), comicBook.getTitle());
+
+        service.delete(result.getId());
+
+        comicBookEntities = service.findAll();
+        Assert.assertNotNull(comicBookEntities);
+        Assert.assertEquals(comicBookEntities.size(), 0);
     }
 }
