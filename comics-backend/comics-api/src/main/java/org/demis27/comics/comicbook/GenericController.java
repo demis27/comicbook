@@ -1,6 +1,7 @@
 package org.demis27.comics.comicbook;
 
 import org.demis27.comics.business.BusinessService;
+import org.demis27.comics.business.GenericBusinessService;
 import org.demis27.comics.business.converter.GenericConverter;
 import org.demis27.comics.business.dto.DTO;
 import org.demis27.comics.data.jpa.entity.ComicBook;
@@ -27,38 +28,38 @@ public abstract class GenericController<EntityImpl extends EntityInterface, DTOI
     @Autowired
     private ControllerHelper helper;
 
-//    @RequestMapping(method = RequestMethod.GET, produces = {"application/json; charset=UTF-8"},
-//            consumes = "application/json")
-//    @ResponseBody
-//    public List<DTOImpl> get(@RequestParam(value = "sort", required = false) String sortParameters,
-//                             @RequestParam(value = "search", required = false) String searchParameters, HttpServletRequest request,
-//                             HttpServletResponse response)
-//            throws ExecutionException, InterruptedException, RangeException {
-//        response.setHeader(HttpHeaders.ACCEPT_RANGES, "resources");
-//
-//        List<DTOImpl> dtos = null;
-//        Range range = helper.getRange(request.getHeader("Range"));
-//        List<SortParameterElement> sorts = helper.getSorts(sortParameters);
-//
-//        List<EntityImpl> entities;
-//        if (searchParameters != null && !searchParameters.isEmpty()) {
-//            entities = getBusinessService().searchEverywhere(searchParameters, range, sorts);
-//        } else {
-//            entities = getBusinessService().findPart(range, sorts);
-//        }
-//        if (entities.isEmpty()) {
-//            response.setStatus(HttpStatus.NO_CONTENT.value());
-//        } else {
-//            response.setHeader(HttpHeaders.CONTENT_RANGE,
-//                    "resources " + range.getStart() + "-" + Math.min(range.getEnd(), entities.size()) + "/*");
-//            response.setStatus(HttpStatus.OK.value());
-//            dtos = getConverter().convertEntities(entities);
-//        }
-//        return dtos;
-//    }
+    @RequestMapping(method = RequestMethod.GET, produces = {"application/json; charset=UTF-8"},
+            consumes = "application/json")
+    @ResponseBody
+    public List<DTOImpl> get(@RequestParam(value = "sort", required = false) String sortParameters,
+                             @RequestParam(value = "search", required = false) String searchParameters, HttpServletRequest request,
+                             HttpServletResponse response)
+            throws ExecutionException, InterruptedException, RangeException {
+        response.setHeader(HttpHeaders.ACCEPT_RANGES, "resources");
 
-    public abstract BusinessService getBusinessService();
+        List<DTOImpl> dtos = null;
+        Range range = helper.getRange(request.getHeader("Range"));
+        List<SortParameterElement> sorts = helper.getSorts(sortParameters);
 
-    public abstract GenericConverter getConverter();
+        List<EntityImpl> entities;
+        if (searchParameters != null && !searchParameters.isEmpty()) {
+            entities = getBusinessService().searchEverywhere(searchParameters, range, sorts);
+        } else {
+            entities = getBusinessService().findPart(range, sorts);
+        }
+        if (entities.isEmpty()) {
+            response.setStatus(HttpStatus.NO_CONTENT.value());
+        } else {
+            response.setHeader(HttpHeaders.CONTENT_RANGE,
+                    "resources " + range.getStart() + "-" + Math.min(range.getEnd(), entities.size()) + "/*");
+            response.setStatus(HttpStatus.OK.value());
+            dtos = getConverter().convertEntities(entities);
+        }
+        return dtos;
+    }
+
+    public abstract GenericBusinessService<EntityImpl> getBusinessService();
+
+    public abstract GenericConverter<EntityImpl, DTOImpl> getConverter();
 
 }

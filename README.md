@@ -2,7 +2,6 @@
 
 ## next tasks
 
-* Generic for BusinessService
 * Generic for Controller
 * Add controller on Person
 * Test Heroku

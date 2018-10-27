@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.demis27.comics.business.BusinessService;
 import org.demis27.comics.business.ComicBookBusinessService;
+import org.demis27.comics.business.GenericBusinessService;
 import org.demis27.comics.business.converter.ComicBookConverter;
+import org.demis27.comics.business.converter.GenericConverter;
 import org.demis27.comics.business.dto.ComicBookDTO;
 import org.demis27.comics.data.jpa.entity.ComicBook;
 import org.demis27.comics.paging.range.Range;
@@ -26,7 +28,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/comic-book")
 @RestController
-public class ComicBookController /* extends GenericController<ComicBook, ComicBookDTO>*/ {
+public class ComicBookController extends GenericController<ComicBook, ComicBookDTO> {
 
     @Autowired
     @Qualifier("comicBookBusinessService")
@@ -44,36 +46,6 @@ public class ComicBookController /* extends GenericController<ComicBook, ComicBo
     // ------------------------------------------------------------------------
     // GET
     // ------------------------------------------------------------------------
-
-    @RequestMapping(method = RequestMethod.GET, produces = { "application/json; charset=UTF-8" },
-            consumes = "application/json")
-    @ResponseBody
-    public List<ComicBookDTO> getComicBooks(@RequestParam(value = "sort", required = false) String sortParameters,
-            @RequestParam(value = "search", required = false) String searchParameters, HttpServletRequest request,
-            HttpServletResponse response)
-            throws ExecutionException, InterruptedException, RangeException {
-        response.setHeader(HttpHeaders.ACCEPT_RANGES, "resources");
-
-        List<ComicBookDTO> dtos = null;
-        Range range = helper.getRange(request.getHeader("Range"));
-        List<SortParameterElement> sorts = helper.getSorts(sortParameters);
-
-        List<ComicBook> entities;
-        if (searchParameters != null && !searchParameters.isEmpty()) {
-            entities = service.searchEverywhere(searchParameters, range, sorts);
-        } else {
-            entities = service.findPart(range, sorts);
-        }
-        if (entities.isEmpty()) {
-            response.setStatus(HttpStatus.NO_CONTENT.value());
-        } else {
-            response.setHeader(HttpHeaders.CONTENT_RANGE,
-                    "resources " + range.getStart() + "-" + Math.min(range.getEnd(), entities.size()) + "/*");
-            response.setStatus(HttpStatus.OK.value());
-            dtos = converter.convertEntities(entities);
-        }
-        return dtos;
-    }
 
     @RequestMapping(value = { "/{id}" }, method = RequestMethod.GET, produces = { "application/json; charset=UTF-8" },
             consumes = "application/json")
@@ -191,8 +163,13 @@ public class ComicBookController /* extends GenericController<ComicBook, ComicBo
         httpResponse.addHeader(HttpHeaders.ALLOW, "HEAD,GET,PUT,DELETE,OPTIONS");
     }
 
-//    @Override
-//    public BusinessService getBusinessService() {
-//        return service;
-//    }
+    @Override
+    public GenericBusinessService<ComicBook> getBusinessService() {
+        return service;
+    }
+
+    @Override
+    public GenericConverter<ComicBook, ComicBookDTO> getConverter() {
+        return converter;
+    }
 }
