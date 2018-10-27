@@ -7,6 +7,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.demis27.comics.business.BusinessService;
 import org.demis27.comics.business.ComicBookBusinessService;
 import org.demis27.comics.business.converter.ComicBookConverter;
 import org.demis27.comics.business.dto.ComicBookDTO;
@@ -25,7 +26,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/comic-book")
 @RestController
-public class ComicBookController {
+public class ComicBookController /* extends GenericController<ComicBook, ComicBookDTO>*/ {
 
     @Autowired
     @Qualifier("comicBookBusinessService")
@@ -189,4 +190,9 @@ public class ComicBookController {
     public void optionsComicBook(HttpServletResponse httpResponse) {
         httpResponse.addHeader(HttpHeaders.ALLOW, "HEAD,GET,PUT,DELETE,OPTIONS");
     }
+
+//    @Override
+//    public BusinessService getBusinessService() {
+//        return service;
+//    }
 }

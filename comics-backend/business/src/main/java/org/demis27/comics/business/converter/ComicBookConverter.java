@@ -27,7 +27,7 @@ public class ComicBookConverter extends GenericConverter<ComicBook, ComicBookDTO
 
     public void updateEntity(ComicBook entity, ComicBookDTO dto) {
         entity.setTitle(dto.getTitle());
-        dto.setIsbn(entity.getIsbn());
+        entity.setIsbn(dto.getIsbn());
     }
 
 }

@@ -2,8 +2,9 @@
 
 ## next tasks
 
-* Add PUT/POST/DELETE on ComicBook
-* Add Test on REST comicBook
+* Generic for DataService
+* Generic for BusinessService
+* Generic for Controller
 * Add controller on Person
 * Test Heroku
 
