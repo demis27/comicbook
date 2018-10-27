@@ -2,7 +2,9 @@ package org.demis27.comics.business.converter;
 
 import org.demis27.comics.business.dto.PersonDTO;
 import org.demis27.comics.data.jpa.entity.Person;
+import org.springframework.stereotype.Service;
 
+@Service(value="personConverter")
 public class PersonConverter extends GenericConverter<Person, PersonDTO> {
 
     public PersonConverter() {

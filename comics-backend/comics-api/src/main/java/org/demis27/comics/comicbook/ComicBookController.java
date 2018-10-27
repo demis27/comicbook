@@ -22,6 +22,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.hateoas.Resource;
+import org.springframework.hateoas.mvc.ControllerLinkBuilder;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -38,9 +41,6 @@ public class ComicBookController extends GenericController<ComicBook, ComicBookD
     @Qualifier("comicBookConverter")
     private ComicBookConverter converter;
 
-    @Autowired
-    private ControllerHelper helper;
-
     private static final Logger LOGGER = LoggerFactory.getLogger(ComicBookController.class);
 
     @Override
@@ -51,5 +51,27 @@ public class ComicBookController extends GenericController<ComicBook, ComicBookD
     @Override
     public GenericConverter<ComicBook, ComicBookDTO> getConverter() {
         return converter;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = {"/{id}"},
+            method = RequestMethod.GET,
+            produces = {"application/json; charset=UTF-8"},
+            consumes = "application/hal+json"
+    )
+    public HttpEntity<Resource> getComicBookHal(@PathVariable(value = "id") String id, HttpServletResponse httpResponse) {
+        ComicBook incomingEmail = service.findById(id);
+        if (incomingEmail != null) {
+            httpResponse.setStatus(HttpStatus.OK.value());
+            httpResponse.setDateHeader(HttpHeaders.LAST_MODIFIED, incomingEmail.getUpdated().getTime());
+            ComicBookDTO dto = converter.convert(incomingEmail);
+            Resource resource = new Resource(dto, ControllerLinkBuilder.linkTo(ComicBookController.class) //
+                    .slash(dto.getId()).withSelfRel());
+
+            return new HttpEntity<>(resource);
+        } else {
+            httpResponse.setStatus(HttpStatus.NOT_FOUND.value());
+            return null;
+        }
     }
 }
