@@ -12,7 +12,7 @@
     <description>All backend services</description>
 
     <modules>
-        <module>core-data</module>
+        <module>comics-data</module>
         <module>business</module>
         <module>webcommon</module>
         <module>paging</module>
