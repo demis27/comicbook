@@ -6,9 +6,9 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan({"org.demis27.comics"})
-public class ComicbookApplication {
+public class ComicBookApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ComicbookApplication.class, args);
+		SpringApplication.run(ComicBookApplication.class, args);
 	}
 }

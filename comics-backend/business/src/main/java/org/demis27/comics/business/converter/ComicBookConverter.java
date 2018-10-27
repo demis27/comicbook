@@ -14,10 +14,20 @@ public class ComicBookConverter extends GenericConverter<ComicBook, ComicBookDTO
     @Override
     protected void copyAttributes(ComicBook entity, ComicBookDTO dto) {
         dto.setTitle(entity.getTitle());
+        dto.setIsbn(entity.getIsbn());
+        dto.setCreated(entity.getCreated());
+        dto.setUpdated(entity.getUpdated());
     }
 
     @Override
     protected void copyAttributes(ComicBookDTO dto, ComicBook entity) {
         entity.setTitle(dto.getTitle());
+        entity.setIsbn(dto.getIsbn());
     }
+
+    public void updateEntity(ComicBook entity, ComicBookDTO dto) {
+        entity.setTitle(dto.getTitle());
+        dto.setIsbn(entity.getIsbn());
+    }
+
 }

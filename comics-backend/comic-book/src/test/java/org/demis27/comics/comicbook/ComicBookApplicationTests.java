@@ -4,7 +4,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.testng.annotations.Test;
 
 @SpringBootTest
-public class ComicbookApplicationTests {
+public class ComicBookApplicationTests {
 
 	@Test
 	public void contextLoads() {

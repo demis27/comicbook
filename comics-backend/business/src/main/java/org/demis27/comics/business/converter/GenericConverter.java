@@ -44,7 +44,7 @@ public abstract class GenericConverter<EntityImpl extends EntityInterface, DTOIm
 
         try {
             entity = entityClass.newInstance();
-            copyAttributes(entity, dto);
+            copyAttributes(dto, entity);
             entity.setId(dto.getId());
         } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
@@ -60,4 +60,5 @@ public abstract class GenericConverter<EntityImpl extends EntityInterface, DTOIm
 
         return entities;
     }
+
 }

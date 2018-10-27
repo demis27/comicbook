@@ -1,20 +1,10 @@
 package org.demis27.comics.business.dto;
 
-public class ComicBookDTO implements DTO {
-
-    private String id;
+public class ComicBookDTO extends AbstractDTO implements DTO {
 
     private String title;
 
-    @Override
-    public String getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(String id) {
-        this.id = id;
-    }
+    private String isbn;
 
     public String getTitle() {
         return title;
@@ -22,5 +12,13 @@ public class ComicBookDTO implements DTO {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 }
