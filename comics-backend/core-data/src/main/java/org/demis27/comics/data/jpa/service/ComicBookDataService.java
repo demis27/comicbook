@@ -13,6 +13,7 @@ import org.demis27.comics.paging.sort.SortParameterElement;
 import org.demis27.comics.paging.sort.SortParameterElementConverter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,6 +25,9 @@ public class ComicBookDataService {
 
     @Resource(name = "comicBookRepository")
     private ComicBookRepository comicBookRepository;
+
+    @Autowired
+    private DataServiceHelper helper;
 
     @Transactional
     public ComicBook create(ComicBook created) {
@@ -66,9 +70,6 @@ public class ComicBookDataService {
 
     @Transactional(readOnly = true)
     public List<ComicBook> findPart(Range range, List<SortParameterElement> sorts) {
-        return comicBookRepository.findAll();
-//                .findAll(
-//                        new PageRequest(range.getPage(), range.getSize(), SortParameterElementConverter.convert(sorts)))
-//                .getContent();
+        return comicBookRepository.findAll(helper.getPageRequest(range, sorts)).getContent();
     }
 }

@@ -7,6 +7,7 @@ import org.demis27.comics.paging.sort.SortParameterElement;
 import org.demis27.comics.paging.sort.SortParameterElementConverter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,6 +24,9 @@ public class PersonDataService {
 
     @Resource(name = "personRepository")
     private PersonRepository personRepository;
+
+    @Autowired
+    private DataServiceHelper helper;
 
     @Transactional
     public Person create(Person created) {
@@ -65,9 +69,6 @@ public class PersonDataService {
 
     @Transactional(readOnly = true)
     public List<Person> findPart(Range range, List<SortParameterElement> sorts) {
-        return personRepository.findAll();
-//                .findAll(
-//                        new PageRequest(range.getPage(), range.getSize(), SortParameterElementConverter.convert(sorts)))
-//                .getContent();
+        return personRepository.findAll(helper.getPageRequest(range, sorts)).getContent();
     }
 }

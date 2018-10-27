@@ -1,10 +1,5 @@
 package org.demis27.comics.web;
 
-import java.util.Collections;
-import java.util.List;
-
-import javax.servlet.http.HttpServletResponse;
-
 import org.demis27.comics.paging.range.Range;
 import org.demis27.comics.paging.range.RangeConverter;
 import org.demis27.comics.paging.range.RangeException;
@@ -17,6 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import javax.servlet.http.HttpServletResponse;
+import java.util.Collections;
+import java.util.List;
 
 @Service("controllerHelper")
 public class ControllerHelper {
