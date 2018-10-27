@@ -65,9 +65,9 @@ public class PersonDataService {
 
     @Transactional(readOnly = true)
     public List<Person> findPart(Range range, List<SortParameterElement> sorts) {
-        return personRepository
-                .findAll(
-                        new PageRequest(range.getPage(), range.getSize(), SortParameterElementConverter.convert(sorts)))
-                .getContent();
+        return personRepository.findAll();
+//                .findAll(
+//                        new PageRequest(range.getPage(), range.getSize(), SortParameterElementConverter.convert(sorts)))
+//                .getContent();
     }
 }

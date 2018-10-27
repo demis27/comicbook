@@ -16,6 +16,9 @@ public class Person extends AbstractEntity implements EntityInterface {
 
     private String middlename;
 
+    public Person() {
+    }
+
     @Id
     @Column(name = "person_id", precision = 10)
     @GeneratedValue(generator = "uuid")

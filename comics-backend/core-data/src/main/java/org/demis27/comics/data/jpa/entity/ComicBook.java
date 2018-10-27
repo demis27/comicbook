@@ -18,6 +18,9 @@ public class ComicBook extends AbstractEntity implements EntityInterface {
 
     private String isbn;
 
+    public ComicBook() {
+    }
+
     @Id
     @Column(name = "comic_book_id", precision = 10)
     @GeneratedValue(generator = "uuid")

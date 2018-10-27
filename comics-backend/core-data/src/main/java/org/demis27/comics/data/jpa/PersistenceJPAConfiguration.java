@@ -21,7 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @PropertySource(value = {"classpath:comics.properties"})
-@ComponentScan(basePackages = {"org.demis27.comics.data.jpa"})
+@ComponentScan(basePackages = {"org.demis27.comics"})
 @EnableJpaRepositories
 @EnableTransactionManagement
 public class PersistenceJPAConfiguration {
@@ -65,6 +65,7 @@ public class PersistenceJPAConfiguration {
         properties.setProperty("hibernate.dialect", environment.getProperty("hibernate.dialect"));
         properties.setProperty("hibernate.show_sql", environment.getProperty("hibernate.show_sql"));
         properties.setProperty("hibernate.connection.characterEncoding", "utf-8");
+        properties.setProperty("hibernate.jdbc.lob.non_contextual_creation", "true");
         return properties;
     }
 }

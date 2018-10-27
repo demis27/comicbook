@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class ComicBookBusinessService {
 
     @Autowired
-    @Qualifier("comicBookJPAService")
+    @Qualifier("comicBookDataService")
     private ComicBookDataService comicBookDataService;
 
     @Transactional

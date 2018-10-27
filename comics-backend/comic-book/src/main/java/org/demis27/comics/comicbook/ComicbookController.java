@@ -34,7 +34,7 @@ public class ComicbookController {
     private ComicBookBusinessService service;
 
     @Autowired
-    @Qualifier("comicBookWebConverter")
+    @Qualifier("comicBookConverter")
     private ComicBookConverter converter;
 
     @Autowired

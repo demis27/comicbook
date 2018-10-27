@@ -66,9 +66,9 @@ public class ComicBookDataService {
 
     @Transactional(readOnly = true)
     public List<ComicBook> findPart(Range range, List<SortParameterElement> sorts) {
-        return comicBookRepository
-                .findAll(
-                        new PageRequest(range.getPage(), range.getSize(), SortParameterElementConverter.convert(sorts)))
-                .getContent();
+        return comicBookRepository.findAll();
+//                .findAll(
+//                        new PageRequest(range.getPage(), range.getSize(), SortParameterElementConverter.convert(sorts)))
+//                .getContent();
     }
 }
