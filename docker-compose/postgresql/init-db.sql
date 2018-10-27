@@ -17,3 +17,10 @@ create table person (
 	, constraint person_pk primary key (person_id)
 );
 
+create table if not exists series (
+     series_id                      varchar(37)
+    ,title                          varchar(256)
+	,creation_date               	timestamp without time zone default current_date not null
+	,modification_date 				timestamp without time zone default current_date not null
+	, constraint series_pk primary key (series_id)
+)

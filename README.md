@@ -2,8 +2,7 @@
 
 ## next tasks
 
-* Generic for Controller
-* Add controller on Person
+* Add series
 * Test Heroku
 
 ## ci
