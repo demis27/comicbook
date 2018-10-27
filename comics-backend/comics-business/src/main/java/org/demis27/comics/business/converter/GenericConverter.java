@@ -1,11 +1,11 @@
 package org.demis27.comics.business.converter;
 
+import org.demis27.comics.business.dto.DTO;
+import org.demis27.comics.data.jpa.entity.EntityInterface;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.demis27.comics.business.dto.DTO;
-import org.demis27.comics.data.jpa.entity.EntityInterface;
 
 public abstract class GenericConverter<EntityImpl extends EntityInterface, DTOImpl extends DTO> {
 
@@ -60,5 +60,7 @@ public abstract class GenericConverter<EntityImpl extends EntityInterface, DTOIm
 
         return entities;
     }
+
+    public abstract void updateEntity(EntityImpl entity, DTOImpl dto);
 
 }

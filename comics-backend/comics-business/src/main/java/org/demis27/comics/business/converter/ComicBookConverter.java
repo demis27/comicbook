@@ -25,6 +25,7 @@ public class ComicBookConverter extends GenericConverter<ComicBook, ComicBookDTO
         entity.setIsbn(dto.getIsbn());
     }
 
+    @Override
     public void updateEntity(ComicBook entity, ComicBookDTO dto) {
         entity.setTitle(dto.getTitle());
         entity.setIsbn(dto.getIsbn());

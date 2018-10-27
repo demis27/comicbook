@@ -10,12 +10,13 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @MappedSuperclass
-public class AbstractEntity {
+public abstract class AbstractEntity implements EntityInterface {
 
     private Date created;
 
     private Date updated;
 
+    @Override
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "modification_date", nullable = false, updatable = true)
     public Date getUpdated() {
@@ -25,10 +26,12 @@ public class AbstractEntity {
         return new Date(updated.getTime());
     }
 
+    @Override
     public void setUpdated(Date updated) {
         this.updated = new Date(updated.getTime());
     }
 
+    @Override
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "creation_date", nullable = false, updatable = false)
     public Date getCreated() {
@@ -38,6 +41,7 @@ public class AbstractEntity {
         return new Date(created.getTime());
     }
 
+    @Override
     public void setCreated(Date created) {
         this.created = new Date(created.getTime());
     }
