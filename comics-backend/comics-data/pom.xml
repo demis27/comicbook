@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <version>0.0.1-SNAPSHOT</version>
 
-    <artifactId>core-data</artifactId>
+    <artifactId>comics-data</artifactId>
 
     <dependencies>
         <dependency>
@@ -26,7 +26,7 @@
 
         <dependency>
             <groupId>org.demis27.comics</groupId>
-            <artifactId>paging</artifactId>
+            <artifactId>comics-paging</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

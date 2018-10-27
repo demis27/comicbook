@@ -13,10 +13,10 @@
 
     <modules>
         <module>comics-data</module>
-        <module>business</module>
-        <module>webcommon</module>
-        <module>paging</module>
-        <module>comic-book</module>
+        <module>comics-business</module>
+        <module>comics-web-common</module>
+        <module>comics-paging</module>
+        <module>comics-api</module>
     </modules>
 
     <properties>

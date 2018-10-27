@@ -9,12 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>web-common</artifactId>
+    <artifactId>comics-web-common</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.demis27.comics</groupId>
-            <artifactId>core-data</artifactId>
+            <artifactId>comics-data</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

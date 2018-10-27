@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.demis27.comics</groupId>
-    <artifactId>comic-book</artifactId>
+    <artifactId>comics-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -14,23 +14,23 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <name>comic-book</name>
+    <name>comics-api</name>
     <description>Demo project for Spring Boot</description>
 
     <dependencies>
         <dependency>
             <groupId>org.demis27.comics</groupId>
-            <artifactId>core-data</artifactId>
+            <artifactId>comics-data</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.demis27.comics</groupId>
-            <artifactId>business</artifactId>
+            <artifactId>comics-business</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.demis27.comics</groupId>
-            <artifactId>web-common</artifactId>
+            <artifactId>comics-web-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

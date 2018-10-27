@@ -2,7 +2,6 @@
 
 ## next tasks
 
-* Generic for DataService
 * Generic for BusinessService
 * Generic for Controller
 * Add controller on Person
