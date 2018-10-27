@@ -5,7 +5,7 @@
 * Add PUT/POST/DELETE on ComicBook
 * Add Test on REST comicBook
 * Add controller on Person
-
+* Test Heroku
 
 ## ci
 
