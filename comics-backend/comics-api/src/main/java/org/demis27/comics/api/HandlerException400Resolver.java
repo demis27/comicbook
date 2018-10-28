@@ -1,4 +1,4 @@
-package org.demis27.comics.web;
+package org.demis27.comics.api;
 
 import javax.annotation.Priority;
 import javax.servlet.http.HttpServletRequest;

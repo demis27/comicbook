@@ -1,5 +1,6 @@
-package org.demis27.comics.web;
+package org.demis27.comics.api.controller;
 
+import org.demis27.comics.api.RestConfiguration;
 import org.demis27.comics.paging.range.Range;
 import org.demis27.comics.paging.range.RangeConverter;
 import org.demis27.comics.paging.range.RangeException;

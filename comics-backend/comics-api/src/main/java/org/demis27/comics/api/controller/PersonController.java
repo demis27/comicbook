@@ -1,4 +1,4 @@
-package org.demis27.comics.comicbook;
+package org.demis27.comics.api.controller;
 
 
 import org.demis27.comics.business.GenericBusinessService;
