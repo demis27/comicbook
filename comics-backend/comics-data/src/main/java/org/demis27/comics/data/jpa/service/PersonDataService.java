@@ -18,12 +18,12 @@ import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
-@Service(value = "personDataService")
+@Service
 public class PersonDataService extends GenericDataService<Person> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PersonDataService.class);
 
-    @Resource(name = "personRepository")
+    @Resource
     private PersonRepository personRepository;
 
     @Override

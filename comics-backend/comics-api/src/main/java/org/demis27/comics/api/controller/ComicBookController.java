@@ -1,7 +1,5 @@
 package org.demis27.comics.api.controller;
 
-import javax.servlet.http.HttpServletResponse;
-
 import org.demis27.comics.business.ComicBookBusinessService;
 import org.demis27.comics.business.GenericBusinessService;
 import org.demis27.comics.business.converter.ComicBookConverter;
@@ -11,7 +9,6 @@ import org.demis27.comics.data.jpa.entity.ComicBook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 import org.springframework.http.HttpEntity;
@@ -19,16 +16,16 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+
 @RequestMapping("/comic-book")
 @RestController
 public class ComicBookController extends GenericController<ComicBook, ComicBookDTO> {
 
     @Autowired
-    @Qualifier("comicBookBusinessService")
     private ComicBookBusinessService service;
 
     @Autowired
-    @Qualifier("comicBookConverter")
     private ComicBookConverter converter;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ComicBookController.class);

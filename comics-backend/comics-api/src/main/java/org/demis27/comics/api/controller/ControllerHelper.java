@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Collections;
 import java.util.List;
 
-@Service("controllerHelper")
+@Service
 public class ControllerHelper {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ControllerHelper.class);

@@ -16,10 +16,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {
-        "org.demis.comics.web",
-        "org.demis.comics.search",
-        "org.demis.comics.business.service",
-        "org.demis.comics.data"})
+        "org.demis27.comics.api",
+        "org.demis27.comics.business",
+        "org.demis27.comics.data"})
 @PropertySource(value = {"classpath:comics.properties"})
 @Component
 public class RestConfiguration extends WebMvcConfigurationSupport {

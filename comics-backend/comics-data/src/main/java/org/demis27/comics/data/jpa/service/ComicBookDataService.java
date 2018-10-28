@@ -19,12 +19,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service(value = "comicBookDataService")
+@Service
 public class ComicBookDataService extends GenericDataService<ComicBook> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ComicBookDataService.class);
 
-    @Resource(name = "comicBookRepository")
+    @Resource
     private ComicBookRepository comicBookRepository;
 
     @Override

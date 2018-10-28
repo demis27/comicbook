@@ -4,7 +4,7 @@ import org.demis27.comics.business.dto.ComicBookDTO;
 import org.demis27.comics.data.jpa.entity.ComicBook;
 import org.springframework.stereotype.Service;
 
-@Service(value="comicBookConverter")
+@Service
 public class ComicBookConverter extends GenericConverter<ComicBook, ComicBookDTO> {
 
     public ComicBookConverter() {
