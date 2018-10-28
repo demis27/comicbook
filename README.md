@@ -3,7 +3,7 @@
 ## next tasks
 
 * Import / Export
-* Add Series issues
+* Add Series issues - foreign key
 * Add some data
 * make an executable
 * Test Heroku

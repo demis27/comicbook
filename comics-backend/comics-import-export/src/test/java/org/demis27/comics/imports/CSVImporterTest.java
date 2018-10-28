@@ -4,6 +4,7 @@ import org.demis27.comics.data.jpa.PersistenceJPAConfiguration;
 import org.demis27.comics.data.jpa.entity.ComicBook;
 import org.demis27.comics.data.jpa.entity.Series;
 import org.demis27.comics.data.jpa.service.ComicBookDataService;
+import org.demis27.comics.data.jpa.service.SeriesDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.ContextHierarchy;
@@ -25,7 +26,10 @@ public class CSVImporterTest extends AbstractTestNGSpringContextTests {
     private CSVImporter importer;
 
     @Autowired
-    private ComicBookDataService service;
+    private ComicBookDataService comicBookDataService;
+
+    @Autowired
+    private SeriesDataService seriesDataService;
 
     @Test
     public void oneLineFile() throws Exception {
@@ -77,18 +81,17 @@ public class CSVImporterTest extends AbstractTestNGSpringContextTests {
 
         importer.saveRecords(entities);
 
-        List<ComicBook> all = service.findAll();
-        Assert.assertEquals(all.size(), 1);
+        List<ComicBook> comicBookList = comicBookDataService.findAll();
+        Assert.assertEquals(comicBookList.size(), 1);
 
+        List<Series> seriesList = seriesDataService.findAll();
+//        Assert.assertEquals(seriesList.size(), 1);
     }
 
     @AfterTest
     @AfterClass
     public void deleteAll() throws Exception {
-        List<ComicBook> all = service.findAll();
-        for (ComicBook comicBook : all) {
-            service.delete(comicBook.getId());
-        }
-
+        comicBookDataService.findAll().stream().forEach(comicBook -> comicBookDataService.delete(comicBook.getId()));
+        seriesDataService.findAll().stream().forEach(series -> seriesDataService.delete(series.getId()));
     }
 }
