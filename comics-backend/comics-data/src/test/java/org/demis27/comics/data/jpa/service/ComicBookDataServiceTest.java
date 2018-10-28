@@ -21,7 +21,6 @@ public class ComicBookDataServiceTest extends AbstractTestNGSpringContextTests {
     @Test
     public void create() throws Exception {
         ComicBook comicBook = new ComicBook();
-//        comicBook.setId(UUID.randomUUID().toString());
         comicBook.setTitle("Adèle et la bête");
         service.create(comicBook);
 

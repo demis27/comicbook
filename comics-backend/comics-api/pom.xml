@@ -15,7 +15,6 @@
     </parent>
 
     <name>comics-api</name>
-    <description>Demo project for Spring Boot</description>
 
     <dependencies>
         <dependency>

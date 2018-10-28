@@ -16,6 +16,7 @@
         <module>comics-business</module>
         <module>comics-paging</module>
         <module>comics-api</module>
+        <module>comics-import-export</module>
     </modules>
 
     <properties>

@@ -2,6 +2,7 @@
 
 ## next tasks
 
+* Import / Export
 * Add Series issues
 * Add some data
 * make an executable
